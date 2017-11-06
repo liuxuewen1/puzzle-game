@@ -6,11 +6,62 @@
     <meta name="viewport" content="width=375,user-scalable=0;">
     <title>game</title>
     <link rel="stylesheet" href="main.css">
+    <script src="https://cdn.bootcss.com/zepto/1.0rc1/zepto.min.js"></script>
     <script src="js/flexible.js"></script>
 </head>
 <body>
     <div class="game">
-        
+        <div class="header cf">
+            <h2>第1关</h2>
+            <p class="cdown"><span>30</span></p>
+        </div>
+        <div class="box">
+            <p class="desc">您还有3秒记住原图</p>
+            <div class="box-img">
+                <a href="javascript:;" active="1" class="pos2">1</a>
+                <a href="javascript:;" active="2" class="pos4">2</a>
+                <a href="javascript:;" active="3" class="pos1">3</a>
+                <a href="javascript:;" active="4" class="pos3">4</a>
+            </div>
+        </div>
     </div>
 </body>
+<script>
+    $(function(){
+        var cur = null;
+        $(".box-img a").on('click', function(){
+            if(cur){
+                if(cur !== $(this)){
+                    var curCls = cur.attr('class');
+                    cur.attr('class', $(this).attr('class'));
+                    $(this).attr('class', curCls);
+                }
+                cur = null;
+                $(".box-img a").removeClass('active');
+                if(checkRight()){
+                    setTimeout(function(){
+                        alert('success')
+                    }, 150)
+                }
+            }else{
+                cur = $(this);
+                cur.addClass('active');
+            }
+        })
+
+        function checkRight(){
+            var $arr = $(".box-img a");
+            var len = 0;
+            for(var i = 0; i < $arr.length; i++){
+                if('pos' + $arr.eq(i).attr('active') === $arr.eq(i).attr('class')){
+                    len++;
+                }
+            }
+            if(len !== 0 && len === $arr.length){
+                return true;
+            }
+            return false;
+        }
+    })
+</script>
 </html>
