@@ -191,11 +191,11 @@ table.gridtable td {
     margin: 0.2rem;
 }
 .game-rule ul li h3 {
-    font-size: 0.48rem;
+    font-size: 0.42rem;
 }
 .game-rule ul li p{
-    font-size: 0.40rem;
-    line-height: 0.60rem;
+    font-size: 0.38rem;
+    line-height: 0.52rem;
 }
 .game-rule .qrcode img{
     width: 2.8rem;
