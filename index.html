@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=375,user-scalable=0;">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="js/flexible.js"></script>
+    <script src="https://cdn.bootcss.com/zepto/1.0rc1/zepto.min.js"></script>
+</head>
+<body>
+    <div class="index">
+        <div class="body" style="display: block;">
+            <div class="header">
+                <h2>pierre cardin 70周年</h2>
+                <h2>时光荣耀 绽放未来</h2>
+            </div>
+            <h2 class="text">拼出最闪耀</h2>
+            <a class="btn" href="game.html">开始游戏</a>
+            <div class="rule">
+                <a href="javascript:;">游戏规则</a>
+            </div>
+            <a href="javascript:;" class="footer">点击查看pierre cardin更多闪耀</a>
+        </div>
+
+        <div class="game-rule" style="display: none;">
+            <h2>活动规则</h2>
+            <span class="close" style="display: none;"></span>
+            <ul>
+                <li>
+                    <h3>活动时间</h3>
+                    <p>2017-11-11 0:00至2018-02-15 24:00</p>
+                </li>
+                <li>
+                    <h3>活动规则</h3>
+                    <p>规则规则规则规则规则规则规则规则规则规则规则规则规则规则规则规则规则</p>
+                </li>
+                <li>
+                    <h3>奖品说明</h3>
+                    <p>规定时间内通过1关及以上即可中奖，每一关对应的奖品如下：</p>
+                    <table class="gridtable">
+                        <tr>
+                            <th>关数</th><th>奖品</th><th>数量</th>
+                        </tr>
+                        <tr>
+                            <td>1</td><td>70元电子券一张（满1880元可用）</td><td>1000</td>
+                        </tr>
+                        <tr>
+                            <td>2</td><td>200元电子券一张（满3880元可用）</td><td>1000</td>
+                        </tr>
+                        <tr>
+                            <td>3</td><td>500元电子券一张（满6880元可用）</td><td>1000</td>
+                        </tr>
+                    </table>
+                    <p>注：奖品说明奖品说明奖品说明奖品说明奖品说明奖品说明奖品说明奖品说明奖品说明</p>
+                </li>
+            </ul>
+            <div class="qrcode"><img class="qrcode" src="img/qrcode.jpg" alt="二维码"></div>
+            <p class="qrcode-desc">长按二维码关注更多精彩</p>
+        </div>
+    </div>
+    <script>
+        $(".rule a").on('click', function(){
+            $(".game-rule").show();
+            $(".close").show();
+            $('.body').hide()
+        })
+        $(".close").on('click', function(){
+            $(".game-rule").hide();
+            $(".close").hide();
+            $('.body').show();
+        })
+    </script>
+</body>
+</html>

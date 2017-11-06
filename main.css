@@ -1,0 +1,215 @@
+@charset "utf-8";
+body {
+    font-family: "PingFang SC", "Lantinghei SC", "Helvetica Neue", "\5FAE\8F6F\96C5\9ED1", "PingFangSC-Regular", "Microsoft YaHei", "Hiragino Sans GB", Verdana, Arial, Helvetica, sans-serif !important;
+    font-size: 12px;
+}
+.cf:before,
+.cf:after {
+    content: " ";
+    display: table;
+}
+
+.cf:after {
+    clear: both;
+}
+
+.cf {
+    zoom: 1;
+}
+input::-webkit-search-cancel-button{
+  display: none;
+}
+input::-ms-clear{
+  display: none;
+  width: 0;
+  height: 0;
+}
+body,
+p,
+div,
+ul,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+span,
+input,
+table,
+td,
+th,
+textarea,
+strong,
+em {
+    margin: 0px;
+    padding: 0px;
+}
+
+ul li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    outline: none;
+    blr: ~"expression(this.onFocus=this.blur())";
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+img {
+    border: none;
+}
+
+.lt {
+    float: left;
+}
+
+.rt {
+    float: right;
+}
+
+label,
+input,
+select,
+img {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.font-arial {
+    font-family: Arial, Helvetica;
+}
+
+em,
+i {
+    font-style: normal;
+}
+
+/*table css*/
+table{
+    margin: 0.4rem;
+}
+table.gridtable {
+    font-family: verdana,arial,sans-serif;
+    font-size:11px;
+    color:#333333;
+    border-width: 1px;
+    border-color: #666666;
+    border-collapse: collapse;
+}
+table.gridtable th {
+    border-width: 1px;
+    padding: 8px;
+    border-style: solid;
+    border-color: #666666;
+    background-color: #dedede;
+}
+table.gridtable td {
+    border-width: 1px;
+    padding: 8px;
+    border-style: solid;
+    border-color: #666666;
+    background-color: #ffffff;
+}
+
+/*close*/
+.close {
+    background: #c5cac1;
+    color: #7b6868;
+    border-radius: 12px;
+    line-height: 20px;
+    text-align: center;
+    height: 20px;
+    width: 20px;
+    font-size: 18px;
+    padding: 1px;
+    top: 15px;
+    right: 10px;
+    position: absolute;
+}
+/* use cross as close button */
+.close::before {
+    content: "\2716";
+}
+
+/* index.html */
+.index .header{
+    margin-top: 15%;
+}
+.index .header h2{
+    text-align: center;
+    font-size: 0.53rem;
+}
+.index .text{
+    margin-top: 30%;
+    margin-bottom: 10%;
+    text-align: center;
+    font-size: 0.53rem;
+}
+.index .btn{
+    display: block;
+    line-height: 1.2rem;
+    background-color: rgb(44, 185, 23);
+    color: #fff;
+    text-align: center;
+    font-size: 0.45rem;
+    margin: 0.4rem 2.2rem;
+    border-radius: 6px;
+}
+.rule a{
+    font-size: 0.36rem;
+    color: #3f80e2;
+    text-decoration: underline;
+    position: absolute;
+    left: 42%;
+    /*text-align: center;*/
+    bottom: 15%;
+}
+.index .footer{
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    font-size: 0.2rem;
+    line-height: 0.78rem;
+    color: #fff;
+    width: 100%;
+    text-align: center;
+}
+
+.game-rule h2{
+    text-align: center;
+    font-size: 0.55rem;
+    margin: 0.4rem;
+}
+.game-rule ul li {
+    margin: 0.2rem;
+}
+.game-rule ul li h3 {
+    font-size: 0.48rem;
+}
+.game-rule ul li p{
+    font-size: 0.40rem;
+    line-height: 0.60rem;
+}
+.game-rule .qrcode img{
+    width: 3.5rem;
+}
+.game-rule .qrcode{
+    text-align: center;
+    margin-bottom: 0.2rem;
+    margin-top: 0.3rem;
+}
+.game-rule .qrcode-desc{
+    font-size: 0.36rem;
+    text-align: center;
+}
+
+
+
+
