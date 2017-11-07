@@ -13,7 +13,7 @@
     <div class="game">
         <div class="header cf">
             <h2>第1关</h2>
-            <p class="cdown"><span>10</span></p>
+            <p class="cdown"><span></span></p>
         </div>
         <div class="box">
             <p class="desc">您还有3秒记住原图</p>
@@ -25,93 +25,18 @@
             </div>
         </div>
     </div>
+
+    <div id="popup-mask"></div>
+    <div class="popup popup-error">
+        <h3 class="title">好可惜，挑战失败，勇敢再试一次</h3>
+        <a href="javascript:;" class="popup-btn again">再玩一次</a>
+        <!-- <a href="javascript:;" class="popup-btn lottery">马上抽奖</a> -->
+    </div>
+    <div class="popup popup-succ">
+        <h3 class="title">恭喜成功过关！</h3>
+        <a href="javascript:;" class="popup-btn lottery">马上抽奖</a>
+        <a href="javascript:;" class="popup-btn go">继续挑战</a>
+    </div>
 </body>
-<script>
-    $(function(){
-        var cur = null;
-        function addClick(){
-            $(".box-img a").on('click', function(){
-                if(cur){
-                    if(cur !== $(this)){
-                        var curCls = cur.attr('class');
-                        cur.attr('class', $(this).attr('class'));
-                        $(this).attr('class', curCls);
-                    }
-                    cur = null;
-                    $(".box-img a").removeClass('active');
-                    if(checkRight()){
-                        setTimeout(function(){
-                            alert('success')
-                        }, 150)
-                    }
-                }else{
-                    cur = $(this);
-                    cur.addClass('active');
-                }
-            })
-        }
-
-        function checkRight(){
-            var $arr = $(".box-img a");
-            var len = 0;
-            for(var i = 0; i < $arr.length; i++){
-                if('pos' + $arr.eq(i).attr('active') === $arr.eq(i).attr('class')){
-                    len++;
-                }
-            }
-            if(len !== 0 && len === $arr.length){
-                return true;
-            }
-            return false;
-        }
-        setCDown()
-        var t = 3;
-        var time = 10;
-        var timer = null;
-        function setCDown(){
-            setTimeout(function(){
-                if(t === 0){
-                    $(".desc").html('');
-                    randomGame();
-                    addClick();
-                    timer = setInterval(function(){
-                        time--;
-                        $(".cdown span").html(time);
-                        if(time === 0){
-                            //倒计时结束
-                            clearInterval(timer);
-                            alert('fail')
-                        }
-                    }, 1000)
-                    return;
-                }else{
-                    setCDown();
-                }
-                $(".desc").html('您还有'+t+'秒记住原图');
-                t--;
-            }, 1000)
-
-        }
-
-        function randomGame(){
-            var arr = [1, 2, 3, 4];
-            var arr2 = [1, 2, 3, 4].sort(function(a, b){
-                return Math.random() - 0.5;
-            });
-            if(arr[0] == arr2[0] && arr[1] == arr2[1] && arr[2] == arr2[2] && arr[3] == arr2[3]){
-                arr2[3] = arr[0];
-                arr2[1] = arr[2];
-                arr2[0] = arr[3];
-                arr2[2] = arr[1]
-            }
-            var $a = $(".box-img a");
-            for(var i = 0; i < $a.length; i++){
-                $a.eq(i).attr('class', 'pos' + arr2[i]);
-            }
-        }
-        function getRandom(m, n){
-            return parseInt(Math.random() * (n - m + 1)) + m;
-        }
-    })
-</script>
+<script src="js/main.js"></script>
 </html>
