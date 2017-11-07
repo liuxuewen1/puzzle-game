@@ -13,15 +13,15 @@
     <div class="game">
         <div class="header cf">
             <h2>第1关</h2>
-            <p class="cdown"><span>30</span></p>
+            <p class="cdown"><span>10</span></p>
         </div>
         <div class="box">
             <p class="desc">您还有3秒记住原图</p>
-            <div class="box-img">
-                <a href="javascript:;" active="1" class="pos2">1</a>
-                <a href="javascript:;" active="2" class="pos4">2</a>
-                <a href="javascript:;" active="3" class="pos1">3</a>
-                <a href="javascript:;" active="4" class="pos3">4</a>
+            <div class="box-img cf">
+                <a href="javascript:;" active="1" class="pos1">1</a>
+                <a href="javascript:;" active="2" class="pos2">2</a>
+                <a href="javascript:;" active="3" class="pos3">3</a>
+                <a href="javascript:;" active="4" class="pos4">4</a>
             </div>
         </div>
     </div>
@@ -29,25 +29,27 @@
 <script>
     $(function(){
         var cur = null;
-        $(".box-img a").on('click', function(){
-            if(cur){
-                if(cur !== $(this)){
-                    var curCls = cur.attr('class');
-                    cur.attr('class', $(this).attr('class'));
-                    $(this).attr('class', curCls);
+        function addClick(){
+            $(".box-img a").on('click', function(){
+                if(cur){
+                    if(cur !== $(this)){
+                        var curCls = cur.attr('class');
+                        cur.attr('class', $(this).attr('class'));
+                        $(this).attr('class', curCls);
+                    }
+                    cur = null;
+                    $(".box-img a").removeClass('active');
+                    if(checkRight()){
+                        setTimeout(function(){
+                            alert('success')
+                        }, 150)
+                    }
+                }else{
+                    cur = $(this);
+                    cur.addClass('active');
                 }
-                cur = null;
-                $(".box-img a").removeClass('active');
-                if(checkRight()){
-                    setTimeout(function(){
-                        alert('success')
-                    }, 150)
-                }
-            }else{
-                cur = $(this);
-                cur.addClass('active');
-            }
-        })
+            })
+        }
 
         function checkRight(){
             var $arr = $(".box-img a");
@@ -61,6 +63,54 @@
                 return true;
             }
             return false;
+        }
+        setCDown()
+        var t = 3;
+        var time = 10;
+        var timer = null;
+        function setCDown(){
+            setTimeout(function(){
+                if(t === 0){
+                    $(".desc").html('');
+                    randomGame();
+                    addClick();
+                    timer = setInterval(function(){
+                        time--;
+                        $(".cdown span").html(time);
+                        if(time === 0){
+                            //倒计时结束
+                            clearInterval(timer);
+                            alert('fail')
+                        }
+                    }, 1000)
+                    return;
+                }else{
+                    setCDown();
+                }
+                $(".desc").html('您还有'+t+'秒记住原图');
+                t--;
+            }, 1000)
+
+        }
+
+        function randomGame(){
+            var arr = [1, 2, 3, 4];
+            var arr2 = [1, 2, 3, 4].sort(function(a, b){
+                return Math.random() - 0.5;
+            });
+            if(arr[0] == arr2[0] && arr[1] == arr2[1] && arr[2] == arr2[2] && arr[3] == arr2[3]){
+                arr2[3] = arr[0];
+                arr2[1] = arr[2];
+                arr2[0] = arr[3];
+                arr2[2] = arr[1]
+            }
+            var $a = $(".box-img a");
+            for(var i = 0; i < $a.length; i++){
+                $a.eq(i).attr('class', 'pos' + arr2[i]);
+            }
+        }
+        function getRandom(m, n){
+            return parseInt(Math.random() * (n - m + 1)) + m;
         }
     })
 </script>
