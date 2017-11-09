@@ -244,9 +244,18 @@ table.gridtable td {
     margin: 0 1.88rem;
     position: relative;
 }
+.img1{
+    background: url(img/1.jpg);
+}
+.img2{
+    background: url(img/2.jpg);
+}
+.img3{
+    background: url(img/3.jpg);
+}
 .game a{
     position: absolute;
-    border: 1px solid #333;
+    border: 1px solid #eee;
     width: 3rem;
     height: 3rem;
     font-size: 0.6rem;
@@ -255,8 +264,25 @@ table.gridtable td {
 .game a.active{
     background-color: #f2f2f2;
 }
+.game .bgpos1{
+    background-position: 0 0;
+    background-size: 200% 200%;
+}
+.game .bgpos2{
+    background-position: 100% 0;
+    background-size: 200% 200%;
+}
+.game .bgpos3{
+    background-position: 0 100%;
+    background-size: 200% 200%;
+}
+.game .bgpos4{
+    background-position: 100% 100%;
+    background-size: 200% 200%;
+}
 .game .pos1{
     left: 0rem;
+    top: 0rem;
 }
 .game .pos2{
     top: 0rem;
@@ -310,4 +336,17 @@ table.gridtable td {
     font-size: 0.35rem;
     margin: 0.6rem 1.2rem;
     border-radius: 2px;
+}
+
+.popup.win{
+    text-align: center;
+    margin-top: -4.5rem;
+}
+.popup .win-title{
+    font-size: 0.40rem;
+    margin: 0.3rem;
+}
+.popup .win-desc{
+    margin: 0.3rem;
+    font-size: 0.38rem;
 }

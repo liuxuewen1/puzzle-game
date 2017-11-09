@@ -23,8 +23,17 @@ $(function(){
                 if(cur){
                     if(cur !== $(this)){
                         var curCls = cur.attr('class');
-                        cur.attr('class', $(this).attr('class'));
-                        $(this).attr('class', curCls);
+                        var reg = /\bpos\d\b/;
+                        var arrCls = reg.exec(curCls);
+                        curCls = arrCls && arrCls[0];
+
+                        var thisCls = $(this).attr('class');
+                        var reg2 = /\bpos\d\b/;
+                        var arrCls2 = reg2.exec(thisCls);
+                        thisCls = arrCls2 && arrCls2[0];
+
+                        cur.removeClass('pos1 pos2 pos3 pos4').addClass(thisCls || "");
+                        $(this).removeClass('pos1 pos2 pos3 pos4').addClass(curCls || "");
                     }
                     cur = null;
                     $(".box-img a").removeClass('active');
@@ -45,7 +54,8 @@ $(function(){
             var $arr = $(".box-img a");
             var len = 0;
             for(var i = 0; i < $arr.length; i++){
-                if('pos' + $arr.eq(i).attr('active') === $arr.eq(i).attr('class')){
+
+                if($arr.eq(i).hasClass('pos' + $arr.eq(i).attr('active'))){
                     len++;
                 }
             }
@@ -99,7 +109,7 @@ $(function(){
             }
             var $a = $(".box-img a");
             for(var i = 0; i < $a.length; i++){
-                $a.eq(i).attr('class', 'pos' + arr2[i]);
+                $a.eq(i).removeClass('pos1 pos2 pos3 pos4').addClass('pos' + arr2[i]);
             }
         }
         function getRandom(m, n){
@@ -116,7 +126,7 @@ $(function(){
             t = 3;
             cur = null;
             clearInterval(timer);
-            $(".box-img a").off('click');
+            $(".box-img a").off('click').removeClass('img1 img2 img3').addClass('img'+level);
             $("#popup-mask").hide();
             $("." + popupCls).hide();
             $(".cdown span").html(objData[level].otime);
@@ -148,15 +158,31 @@ $(function(){
             objData[level].time = objData[level].otime;
             hidePopup('popup-error');
         })
-        //马上抽奖
-        $(".lottery").on('click', function(){
-            //
-        })
         function initGame(){
             var $arr = $(".box-img a");
+            $arr.removeClass('img1 img2 img3').addClass('img'+level);
             for(var i = 0; i < $arr.length; i++){
-                $arr.eq(i).attr('class', 'pos' + $arr.eq(i).attr('active'));
+                $arr.eq(i).removeClass('pos1 pos2 pos3 pos4').addClass('pos' + $arr.eq(i).attr('active'));
             }
         }
+
+        //马上抽奖
+        $(".lottery").on('click', function(){
+            gameLottery();
+        })
+        
+        function gameLottery(){
+            var lottery = getRandom(1,3);
+            var objMoney = {
+                "1": 70,
+                "2": 200,
+                "3": 500
+            }
+            $("#lotteryimg").attr('src', 'img/win'+lottery+'.jpeg');
+            $("#winmoney").text(objMoney[lottery]);
+            $(".win").show();
+            $("#popup-mask").show();
+        }
+
 
     })
