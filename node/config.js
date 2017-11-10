@@ -1,10 +1,10 @@
 const sha1 = require('sha1');
 
 const appConfig = {
-    token: 'liuxuewentestwechattoken',
-    appid: 'wxcd81ae19eafa1201',
-    encodingAESKey: 'encodinAESKey',
-    appsecret: '0b468f7cffb00b8ed2fccd145f372837',
+    token: 'liuxuewenwechattoken',
+    appid: 'wxa304b2d4308bbdd3',
+    encodingAESKey: '8VzWTU9shOGduOMlKvEGtcsS9TEtEvC6ZKvhrH0HIA5',
+    appsecret: 'fe28dd65cde03da9e6c5e09f8c7d1ca3',
     checkSignature: true // 可选，默认为true。由于微信公众平台接口调试工具在明文模式下不发送签名，所以如要使用该测试工具，请将其设置为false
 };
 module.exports = {

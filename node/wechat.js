@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use((req, res, next) => {
     // console.log(req.path, req.method, req.query ,req.body);
     
-    if(req.path === '/'){
+    if(req.path === '/serve'){
         // 微信签名校验
         if(!config.checkSignature(req)){
             res.send({
