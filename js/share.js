@@ -26,7 +26,7 @@ $(function(){
             url: 'http://liuxuewensyd.localtunnel.me/serve/jssign?url='+ encodeURIComponent(window.location.href.split('#')[0]),
             type:'get',
             dataType: 'json',
-            data:{debug: true},
+            // data:{debug: true},
             async:true,
             success:function(data){
                 if(data.errorCode===0){
