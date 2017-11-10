@@ -462,7 +462,7 @@ table.gridtable td {
 }
 
 .popup.win{
-    width: 5.94rem;
+    width: 6rem;
     height: 7.72rem;
     background: url(img/win-popup.jpg) no-repeat;
     background-size: contain;
@@ -479,11 +479,11 @@ table.gridtable td {
     margin-top: -1.75rem;
 }
 .popup.popup-error{
-    width: 6rem;
+    width: 6.1rem;
     position: absolute;
     top: 50%;
     left: 50%;
-    margin-left: -3.05rem;
+    margin-left: -3.1rem;
     margin-top: -3.6rem;
 }
 .popup .again{
