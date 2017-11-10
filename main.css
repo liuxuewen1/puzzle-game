@@ -478,6 +478,7 @@ table.gridtable td {
     width: 6rem;
 }
 #winmoney{
+    display: block;
     letter-spacing: 1px;
     font-size: 0.56rem;
     text-align: center;
