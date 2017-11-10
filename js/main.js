@@ -224,14 +224,15 @@ $(function(){
         })
         
         function gameLottery(){
-            var lottery = getRandom(1,3);
+            // var lottery = getRandom(1,3);
+            var lottery = [0,70,200,500];
             var objMoney = {
                 "1": 70,
                 "2": 200,
                 "3": 500
             }
-            $("#lotteryimg").attr('src', 'img/win'+lottery+'.jpeg');
-            $("#winmoney").html('恭喜您获得<br>'+objMoney[lottery]+'电子代金券一张');
+            $("#lotteryimg").attr('src', 'img/win'+level+'.jpeg');
+            $("#winmoney").html('恭喜您获得<br>'+lottery[level]+'电子代金券一张');
             $(".win").show();
             $(".popup-succ").hide();
             // $("#popup-mask").show();
