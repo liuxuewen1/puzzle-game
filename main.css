@@ -226,7 +226,7 @@ table.gridtable td {
     bottom:3.386667rem;
     font-size: 0.4rem;
     color: #8a1826;
-    z-index: 10;
+    z-index: 3;
 }
 .star{
     position: absolute;
