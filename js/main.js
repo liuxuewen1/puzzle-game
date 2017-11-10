@@ -138,6 +138,12 @@ $(function(){
         }
         //fail弹窗
         function showFailPopup(){
+            if(level === 1){
+                $(".popup-error .lottery").hide();
+            }else{
+                $(".popup-error .lottery").show();
+                $(".popup-error .again").removeClass('center').addClass('right')
+            }
             showPopup('popup-error');
         }
         //succ弹窗
@@ -145,9 +151,10 @@ $(function(){
             clearInterval(timer);
             if(level === 3){
                 $(".go").hide();
-                $(".popup-succ .title").html('恭喜！<br>顺利完成所有拼图')
+                $(".popup-succ-all").show()
+            }else{
+                showPopup('popup-succ');
             }
-            showPopup('popup-succ');
         }
         //继续挑战
         $(".go").on('click', function(){
