@@ -1,5 +1,5 @@
 $(function(){
-        
+
         var objData = {
             1: {
                 otime: 8,
@@ -78,7 +78,7 @@ $(function(){
                     addClick();
                     timer = setInterval(function(){
                         objData[level].time--;
-                        $(".level-time").html(objData[level].time)+'S';
+                        $(".level-time").html(objData[level].time+'S');
                         if(objData[level].time === 0){
                             //倒计时结束
                             clearInterval(timer);
@@ -143,7 +143,7 @@ $(function(){
                 $(".popup-error .lottery").hide();
             }else{
                 $(".popup-error .lottery").show();
-                $(".popup-error .again").removeClass('center').addClass('right')
+                $(".popup-error .again").removeClass('center').addClass('right');
             }
             showPopup('popup-error');
         }
@@ -177,10 +177,15 @@ $(function(){
 
         //马上抽奖
         $(".lottery").on('click', function(){
-            gameLottery();
+            if($(".popup-error .lottery").css('display') !== 'none'){
+                gameLottery(level-1);
+            }else{
+                gameLottery();
+            }
         })
         
-        function gameLottery(){
+        function gameLottery(optLevel){
+            optLevel = optLevel || level;
             // var lottery = getRandom(1,3);
             var lottery = [0,70,200,500];
             var objMoney = {
@@ -188,8 +193,8 @@ $(function(){
                 "2": 200,
                 "3": 500
             }
-            $("#lotteryimg").attr('src', 'img/win'+level+'.jpeg');
-            $("#winmoney").html('恭喜您获得<br>'+lottery[level]+'电子代金券一张');
+            $("#lotteryimg").attr('src', 'img/win'+optLevel+'.jpeg');
+            $("#winmoney").html('恭喜您获得<br>'+lottery[optLevel]+'电子代金券一张');
             $(".win").show();
             $(".popup-succ").hide();
             // $("#popup-mask").show();
