@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>test</title>
+</head>
+<body>
+    
+</body>
+<script src="https://static.souyidai.com/www/js/jquery1.10.2.min.js"></script>
+<script>
+    var Util = {
+    	// 解析URL
+	    parserUrl: function(url) {
+	        var a = document.createElement('a');
+	        a.href = url;
+
+	        var search = function(search) {
+	            if (!search) return {};
+
+	            var ret = {};
+	            search = search.slice(1).split('&');
+	            for (var i = 0, arr; i < search.length; i++) {
+	                arr = search[i].split('=');
+	                ret[arr[0]] = arr[1];
+	            }
+	            return ret;
+	        };
+
+	        return {
+	            protocol: a.protocol,
+	            host: a.host,
+	            hostname: a.hostname,
+	            pathname: a.pathname,
+	            search: search(a.search),
+	            hash: a.hash
+	        }
+	    },
+	    getUrlParam: function(param, origin){
+	        var reg_param = new RegExp("(^|&)" + param + "=([^&]*)(&|$)");
+	        var arr = (origin || window.location.search).substr(1).match(reg_param);
+	        if (arr && arr.length >= 2) {
+	            return arr[2];
+	        }else{
+	            return '';
+	        }
+	    },
+	    cookie: {
+	        add: function(name, value, iDay, domain){
+	            if(!iDay) return;
+
+	            var oDate = new Date();
+	            oDate.setDate(oDate.getDate() + iDay);
+	            document.cookie = name + '=' + value + ';path=/;expires=' + oDate.toGMTString() + ';domain=' + (domain || '.huli.com');
+	        },
+	        get: function(name){
+	            let cookies = document.cookie.split('; ');
+	            for (let i = 0, len = cookies.length; i < len; i++) {
+	                let arr = cookies[i].split('=');
+	                if (arr[0] == name) return cookies[i].replace(arr[0] + '=', '');
+	            }
+	            return '';
+	        },
+	        del: function(name, domain){
+	            document.cookie = name + "=;path=/;expires=" + (new Date(0)).toGMTString() + ';domain=' + (domain || '.huli.com');
+	        },
+	        getBase(name){
+	            let cookies = document.cookie.split('; ');
+	            for (let i = 0, len = cookies.length; i < len; i++) {
+	                let arr = cookies[i].split('=');
+	                if (arr[0] == name) {
+	                    return Base64.decode(decodeURIComponent(cookies[i].replace(arr[0] + '=', '')));
+	                }
+	            }
+	            return '';
+	        }
+	    },
+	    isIE8: navigator.userAgent.toLowerCase().indexOf("msie 8") > -1,
+	    getGuid: function(){
+	        return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+	            var r = Math.random()*16|0, v = c == 'x' ? r : (r&0x3|0x8);
+	            return v.toString(16);
+	        });
+	    }
+    };
+    function hasOpenId(){ //判断是有openid
+        let res = { hasOpenId: false, openid: '' };
+        let str = location.href;
+        let reg  = /^http(.*?)\?/;
+        if(reg.test(str)){
+            str = str.replace(reg, '?');
+            res.openid = Util.getUrlParam('openid', str);
+            res.hasOpenId = res.openid? true: false;
+        }
+
+        return res;
+    }
+    function getData(){
+    	let url = '',postObj = {t:Math.random()},retObj = hasOpenId();
+        if(retObj.hasOpenId){
+            postObj.openid = retObj.openid;
+            url = 'https://weixin.souyidai.com/page/my_money_new';
+            // url = 'http://cb125871.ngrok.io/api/my_money';
+        }else{
+            // if(!wechat){
+            //     this.$router.push('/home');
+            // }
+            url = '/wap/1.4/mycapital/chart';
+        }
+        alert('1:'+postObj.openid)
+        $.ajax({
+        	type: "POST",
+        	url: url,
+        	data: postObj,
+        	success: function(data){
+        		alert('2:'+postObj.openid)
+        		alert('3:'+data.errorCode)
+        		alert('4:'+data.errorMessage)
+        	}
+        })
+    }
+    getData()
+
+</script>
+</html>

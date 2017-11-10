@@ -1,0 +1,30 @@
+{
+  "name": "wechat",
+  "version": "1.0.0",
+  "description": "微信公众号测试",
+  "main": "wechat.js",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "localtunnel": "^1.8.3",
+    "micro": "^8.0.1",
+    "sync-request": "^4.1.0"
+  },
+  "devDependencies": {
+    "express": "^4.15.3",
+    "fs-extra": "^4.0.1",
+    "raw-body": "^2.2.0",
+    "request": "^2.81.0",
+    "request-promise": "^4.2.1",
+    "sha1": "^1.1.1",
+    "xml2json": "^0.11.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@git.soydai.cn:fe-static/fe-huli-demo.git"
+  },
+  "author": "liuxuewen",
+  "license": "ISC"
+}
