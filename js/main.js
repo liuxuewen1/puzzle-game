@@ -177,7 +177,7 @@ $(function(){
 
         //马上抽奖
         $(".lottery").on('click', function(){
-            if($(".popup-error .lottery").css('display') !== 'none'){
+            if(level !== 3 && $(".popup-error .lottery").css('display') !== 'none'){
                 gameLottery(level-1);
             }else{
                 gameLottery();
@@ -197,6 +197,8 @@ $(function(){
             $("#winmoney").html('恭喜您获得<br>'+lottery[optLevel]+'电子代金券一张');
             $(".win").show();
             $(".popup-succ").hide();
+            $(".popup-error").hide();
+            $(".lottery").hide();
             // $("#popup-mask").show();
         }
 
