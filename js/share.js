@@ -23,7 +23,7 @@ $(function(){
     
     var wxShare = function(){
         $.ajax({
-            url: 'http://liuxuewensyd.localtunnel.me/serve/jssign?url='+ encodeURIComponent(window.location.href.split('#')[0]),
+            url: 'http://www.nihaoyo.com/api/jssdk?url='+ encodeURIComponent(window.location.href.split('#')[0]),
             type:'get',
             dataType: 'json',
             // data:{debug: true},

@@ -67,7 +67,7 @@ router.get('/jssdk', (req, res) => {
     const _result = {
         errorCode: 0,
         result: {
-            debug: false,
+            debug: true,
             appId: config.appInfo.appid, // 必填，公众号的唯一标识
             timestamp: _timestamp, // 必填，生成签名的时间戳
             nonceStr: _nonceStr, // 必填，生成签名的随机串
