@@ -14,7 +14,7 @@
         <img src="img/index_bg.jpg" alt="" class="index-bg">
         <span class="rule">活动规则</span>
         <span class="prize">我的奖品</span>
-        <div class="rule-list">
+        <div class="rule-list mask">
             <div class="rule-cont">
                 <img src="img/close.png" alt="" class="close">
                 <img src="img/rule01.jpg" class="rule01">
@@ -22,7 +22,7 @@
                 <img src="img/code.jpg" class="code">
             </div>
         </div>
-        <div class="my-prize">
+        <div class="my-prize mask">
             <div class="prize-cont">
                 <img src="img/close.png" class="close">
                 <img src="img/lottery-popup.jpg" class="prize-img">
@@ -32,13 +32,12 @@
     <script>
         $(".rule").on('click', function(){
             $(".rule-list").show();
-            $(".close").show();
-            $('.body').hide()
         })
-        $(".close").on('click', function(){
-            $(".game-rule").hide();
-            $(".close").hide();
-            $('.body').show();
+        $(".prize").on('click', function(){
+            $('.my-prize').show();
+        })
+        $(".close").on('click',function(){
+            $(".mask").hide();
         })
     </script>
 </body>
