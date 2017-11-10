@@ -9,60 +9,29 @@
     <script src="js/flexible.js"></script>
     <script src="https://cdn.bootcss.com/zepto/1.0rc1/zepto.min.js"></script>
 </head>
-<body>
+<body style="background: none;">
     <div class="index">
-        <div class="body" style="display: block;">
-            <div class="header">
-                <h2>pierre cardin 70周年</h2>
-                <h2>时光荣耀 绽放未来</h2>
+        <img src="img/index_bg.jpg" alt="" class="index-bg">
+        <span class="rule">活动规则</span>
+        <span class="prize">我的奖品</span>
+        <div class="rule-list">
+            <div class="rule-cont">
+                <img src="img/close.png" alt="" class="close">
+                <img src="img/rule01.jpg" class="rule01">
+                <img src="img/rule02.jpg" class="rule02">
+                <img src="img/code.jpg" class="code">
             </div>
-            <h2 class="text">拼出最闪耀</h2>
-            <a class="btn" href="game.html">开始游戏</a>
-            <div class="rule">
-                <a href="javascript:;">游戏规则</a>
-            </div>
-            <a href="javascript:;" class="footer">点击查看pierre cardin更多闪耀</a>
         </div>
-
-        <div class="game-rule" style="display: none;">
-            <h2>活动规则</h2>
-            <span class="close" style="display: none;"></span>
-            <ul>
-                <li>
-                    <h3>活动时间</h3>
-                    <p>2017-11-11 0:00至2018-02-15 24:00</p>
-                </li>
-                <li>
-                    <h3>活动规则</h3>
-                    <p>规则规则规则规则规则规则规则规则规则规则规则规则规则规则规则规则规则</p>
-                </li>
-                <li>
-                    <h3>奖品说明</h3>
-                    <p>规定时间内通过1关及以上即可中奖，每一关对应的奖品如下：</p>
-                    <table class="gridtable">
-                        <tr>
-                            <th>关数</th><th>奖品</th><th>数量</th>
-                        </tr>
-                        <tr>
-                            <td>1</td><td>70元电子券一张（满1880元可用）</td><td>1000</td>
-                        </tr>
-                        <tr>
-                            <td>2</td><td>200元电子券一张（满3880元可用）</td><td>1000</td>
-                        </tr>
-                        <tr>
-                            <td>3</td><td>500元电子券一张（满6880元可用）</td><td>1000</td>
-                        </tr>
-                    </table>
-                    <p>注：奖品说明奖品说明奖品说明奖品说明奖品说明奖品说明奖品说明奖品说明奖品说明</p>
-                </li>
-            </ul>
-            <div class="qrcode"><img class="qrcode" src="img/qrcode.jpg" alt="二维码"></div>
-            <p class="qrcode-desc">长按二维码关注更多精彩</p>
+        <div class="my-prize">
+            <div class="prize-cont">
+                <img src="img/close.png" class="close">
+                <img src="img/lottery-popup.jpg" class="prize-img">
+            </div>
         </div>
     </div>
     <script>
-        $(".rule a").on('click', function(){
-            $(".game-rule").show();
+        $(".rule").on('click', function(){
+            $(".rule-list").show();
             $(".close").show();
             $('.body').hide()
         })

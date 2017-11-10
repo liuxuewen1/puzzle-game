@@ -147,75 +147,72 @@ table.gridtable td {
 }
 
 /* index.html */
-.index .header h2{
-    text-align: center;
-    font-size: 0.53rem;
-}
-.index .text{
-    margin-top: 30%;
-    margin-bottom: 10%;
-    text-align: center;
-    font-size: 0.53rem;
-}
-.index .btn{
-    display: block;
-    line-height: 1.2rem;
-    background-color: rgb(44, 185, 23);
-    color: #fff;
-    text-align: center;
-    font-size: 0.45rem;
-    margin: 0.4rem 2.2rem;
-    border-radius: 6px;
-}
-.rule a{
-    font-size: 0.36rem;
-    color: #3f80e2;
-    text-decoration: underline;
-    position: absolute;
-    left: 42%;
-    /*text-align: center;*/
-    bottom: 15%;
-}
-.index .footer{
-    display: block;
+.index .index-bg{
+    width: 10.0rem;
+    height: 17.786667rem;
     position: absolute;
     left: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    font-size: 0.32rem;
-    line-height: 0.88rem;
-    color: #fff;
+    top:0;
+}
+.index .rule,.index .prize{
+    font-size: 0.4rem;
+    color: #959797;
+    position: absolute;
+    bottom:1.2rem;
+}
+.index .rule{
+    left: 0.733333rem;
+}
+.index .prize{
+    left: 3.253333rem;
+}
+.my-prize,.rule-list{
+    position: absolute;
+    left: 0;
+    top:0;
     width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    display: none;
+}
+.rule-cont,.prize-cont{
+    border:0.146667rem solid #e4d8da;
+    position: absolute;
+    left: 50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+}
+.rule-cont{
+    background-color: #fff;
     text-align: center;
+    padding: 0.266667rem;
+}
+.rule01{
+    width: 6.733333rem;
+    display: block;
+}
+.rule02{
+    width: 6.733333rem;
+    display: block;
+}
+.code{
+    width: 2.933333rem;
+    margin-top:0.266667rem;
+}
+.prize-img{
+    width: 5.653333rem;
+    height: 7.426667rem;
+    display: block;
+}
+.close{
+    position: absolute;
+    right: -0.4rem;
+    top:-0.4rem;
+    width: 0.666667rem;
+    height: 0.666667rem;
+    z-index: 3;
 }
 
-.game-rule h2{
-    text-align: center;
-    font-size: 0.55rem;
-    margin: 0.2rem;
-}
-.game-rule ul li {
-    margin: 0.2rem;
-}
-.game-rule ul li h3 {
-    font-size: 0.42rem;
-}
-.game-rule ul li p{
-    font-size: 0.38rem;
-    line-height: 0.52rem;
-}
-.game-rule .qrcode img{
-    width: 2.8rem;
-}
-.game-rule .qrcode{
-    text-align: center;
-    margin-bottom: 0.12rem;
-    margin-top: 0.2rem;
-}
-.game-rule .qrcode-desc{
-    font-size: 0.28rem;
-    text-align: center;
-}
 
 
 /*game.html*/
