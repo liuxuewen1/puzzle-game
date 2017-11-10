@@ -177,7 +177,7 @@ $(function(){
 
         //马上抽奖
         $(".lottery").on('click', function(){
-            if(level !== 3 && $(".popup-error .lottery").css('display') !== 'none'){
+            if($(".popup-error").css('display') !== 'none'){
                 gameLottery(level-1);
             }else{
                 gameLottery();
