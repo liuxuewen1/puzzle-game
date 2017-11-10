@@ -147,6 +147,12 @@ table.gridtable td {
 }
 
 /* index.html */
+.index{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
 .index .index-bg{
     width: 10.0rem;
     height: 17.786667rem;
@@ -159,6 +165,7 @@ table.gridtable td {
     color: #959797;
     position: absolute;
     bottom:1.2rem;
+    z-index: 3;
 }
 .index .rule{
     left: 0.733333rem;
@@ -174,6 +181,7 @@ table.gridtable td {
     height: 100%;
     background-color: rgba(0,0,0,0.8);
     display: none;
+    z-index: 4;
 }
 .rule-cont,.prize-cont{
     border:0.146667rem solid #e4d8da;
@@ -212,8 +220,42 @@ table.gridtable td {
     height: 0.666667rem;
     z-index: 3;
 }
+.game-start{
+    position: absolute;
+    right: 1.6rem;
+    bottom:3.386667rem;
+    font-size: 0.4rem;
+    color: #8a1826;
+    z-index: 3;
+}
+.star{
+    position: absolute;
+    right: 0;
+    top:0;
+    width: 4.2rem;
+    height: 4.2rem;
+    animation:move 5s 0s;
+    animation-fill-mode:forwards;
+    z-index:2;
+}
 
-
+@-webkit-keyframes move{
+    0%{
+        right: 0;
+        top:0;
+        transform: scale(3);
+    }
+    50%{
+        right: 3.333333rem;
+        top:5.733333rem;
+        transform: scale(4);
+    }
+    100%{
+        right: 0rem;
+        top:13.333333rem;
+        transform: scale(5);
+    }
+}
 
 /*game.html*/
 .game {
