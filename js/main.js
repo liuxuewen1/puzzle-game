@@ -41,7 +41,7 @@ $(function(){
             }
         })
     };
-        
+        wxShare();
 
         var objData = {
             1: {
