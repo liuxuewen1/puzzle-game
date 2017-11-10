@@ -1,4 +1,4 @@
-$({
+$(function(){
 
     // 分享相关代码
     var shareData = {
