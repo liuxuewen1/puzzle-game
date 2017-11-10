@@ -89,6 +89,16 @@ i {
     font-style: normal;
 }
 
+html{
+    height: 100%;
+    width: 100%;
+}
+body{
+    height: 100%;
+    background: url('img/bg.jpg') no-repeat;
+    background-size: cover;
+}
+
 /*table css*/
 table{
     margin: 0.4rem;
@@ -137,9 +147,6 @@ table.gridtable td {
 }
 
 /* index.html */
-.index .header{
-    margin-top: 15%;
-}
 .index .header h2{
     text-align: center;
     font-size: 0.53rem;
@@ -212,33 +219,34 @@ table.gridtable td {
 
 
 /*game.html*/
+.game {
+    margin-top: 2rem;
+}
 .game .header{
-    padding: 0.4rem;
+    position: absolute;
+    right: 0;
+    top: 1.3rem;
+    background: #fff;
+    padding: 4px 12px 4px 9px;
+    line-height: 0.66rem;
+    font-size: 0.44rem;
+    color: #000;
 }
-.game .header h2{
-    font-size: 0.52rem;
-    float: left;
-}
-.game .cdown{
-    float: right;
-    font-size: 0.46rem;
-    background: rgb(44, 185, 23);
-    color: #fff;
-    border-radius: 6px;
-    /*margin-right: 10px;*/
-    padding: 0.12rem;
-    padding-left: 0.4rem;
-    padding-right: 0.4rem;
+.game .header .level-time{
+    color: #ae444b;
 }
 .game .box{
     margin-top: 2rem;
 }
 .game .desc{
     text-align: center;
-    font-size: 0.52rem;
-    color: #666;
-    font-weight: bold;
+    font-size: 0.64rem;
+    color: #a38f72;
+    letter-spacing: 1px;
     margin-bottom: 0.4rem;
+}
+.game .desc span{
+    color: #ae444b;
 }
 .game .box-img{
     margin: 0 1.88rem;
@@ -312,8 +320,8 @@ table.gridtable td {
     position: absolute;
     top: 50%;
     left: 50%;
-    margin-left: -3rem;
-    margin-top: -3.5rem;
+    margin-left: -3.05rem;
+    margin-top: -3.65rem;
     width: 6rem;
     /*height: 6rem;*/
     background-color: #f8f8f8;
@@ -322,25 +330,76 @@ table.gridtable td {
     display: none;
     padding-bottom: 0.3rem;
 }
+.popup.popup-succ{
+    height: 6rem;
+    opacity: 0.5;
+    text-align: center;
+    background-color: #000;
+}
+.popup.popup-succ img{
+    width: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-top: -1.58rem;
+    margin-left: -1.3rem;
+}
 .popup .title{
     font-size: 0.46rem;
     text-align: center;
     margin: 0.8rem 0.4rem;
 }
 .popup-btn{
-    display: block;
+    position: absolute;
+    bottom: -2rem;
     line-height: 0.8rem;
     background-color: rgb(44, 185, 23);
     color: #fff;
     text-align: center;
     font-size: 0.35rem;
-    margin: 0.6rem 1.2rem;
+    /*margin: 0.6rem 1.2rem;*/
     border-radius: 2px;
+    width: 2.59rem;
+    height: 1rem;
+    background-size: contain;
+}
+.popup .lottery{
+    background-image: url('img/btnluck.jpg');
+}
+.popup .go{
+    background-image: url('img/btngo.jpg');
+}
+.popup .left{
+    left: -0.4rem;
+}
+.popup .center{
+    left: 1.7rem;
+}
+.popup .right{
+    right: -0.4rem;
 }
 
 .popup.win{
+    width: 5.94rem;
+    height: 7.72rem;
+    background: url(img/win-popup.jpg) no-repeat;
+    background-size: contain;
     text-align: center;
-    margin-top: -4.5rem;
+}
+.popup.win img{
+    width: 3.5rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -1.75rem;
+    margin-top: -1.75rem;
+}
+#winmoney{
+    position: absolute;
+    left: 0.40rem;
+    top: 1.4rem;
+    font-size: 0.56rem;
+    color: #94837d;
 }
 .popup .win-title{
     font-size: 0.40rem;

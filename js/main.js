@@ -17,7 +17,7 @@ $(function(){
         var timer = null;
         var level = 1;
         var cur = null;
-        $(".cdown span").html(objData[level].otime);
+        $(".level-time").html(objData[level].otime+'S');
         function addClick(){
             $(".box-img a").on('click', function(){
                 if(cur){
@@ -77,7 +77,7 @@ $(function(){
                     addClick();
                     timer = setInterval(function(){
                         objData[level].time--;
-                        $(".cdown span").html(objData[level].time);
+                        $(".level-time").html(objData[level].time)+'S';
                         if(objData[level].time === 0){
                             //倒计时结束
                             clearInterval(timer);
@@ -93,7 +93,8 @@ $(function(){
         }
 
         function showCDDesc(){
-            $(".desc").css('visibility', 'visible').html('您还有'+t+'秒记住原图');
+            $(".desc").css('visibility', 'visible')
+            $("#time").html(t);
         }
 
         function randomGame(){
@@ -118,7 +119,7 @@ $(function(){
 
         //显示弹窗
         function showPopup(popupCls){
-            $("#popup-mask").show();
+            // $("#popup-mask").show();
             $("." + popupCls).show();
         }
         //hide弹窗
@@ -127,13 +128,13 @@ $(function(){
             cur = null;
             clearInterval(timer);
             $(".box-img a").off('click').removeClass('img1 img2 img3').addClass('img'+level);
-            $("#popup-mask").hide();
+            // $("#popup-mask").hide();
             $("." + popupCls).hide();
-            $(".cdown span").html(objData[level].otime);
+            $(".level-time").html(objData[level].otime+'S');
             showCDDesc();
             setCDown();
             initGame();
-            $(".header h2").html('第'+level+'关')
+            $(".level-title").html('第'+level+'关')
         }
         //fail弹窗
         function showFailPopup(){
@@ -181,7 +182,8 @@ $(function(){
             $("#lotteryimg").attr('src', 'img/win'+lottery+'.jpeg');
             $("#winmoney").text(objMoney[lottery]);
             $(".win").show();
-            $("#popup-mask").show();
+            $(".popup-succ").hide();
+            // $("#popup-mask").show();
         }
 
 

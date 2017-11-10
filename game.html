@@ -10,13 +10,16 @@
     <script src="js/flexible.js"></script>
 </head>
 <body>
-    <div class="game">
-        <div class="header cf">
+    <div class="game cf">
+        <!-- <div class="header cf">
             <h2>第1关</h2>
             <p class="cdown"><span></span></p>
+        </div> -->
+        <div class="header cf">
+            <span class="level-title">第1关</span>&nbsp;&nbsp;<span class="level-time">25S</span>
         </div>
         <div class="box">
-            <p class="desc">您还有3秒记住原图</p>
+            <p class="desc">您还有<span id="time">3</span>秒记住原图</p>
             <div class="box-img cf">
                 <a href="javascript:;" active="1" class="img1 pos1 bgpos1"></a>
                 <a href="javascript:;" active="2" class="img1 pos2 bgpos2"></a>
@@ -32,19 +35,28 @@
         <a href="javascript:;" class="popup-btn again">再玩一次</a>
         <!-- <a href="javascript:;" class="popup-btn lottery">马上抽奖</a> -->
     </div>
-    <div class="popup popup-succ">
+    <!-- <div class="popup popup-succ">
         <h3 class="title">恭喜成功过关！</h3>
         <a href="javascript:;" class="popup-btn lottery">马上抽奖</a>
         <a href="javascript:;" class="popup-btn go">继续挑战</a>
+    </div> -->
+    <div class="popup popup-succ">
+        <img src="img/right.png" alt="">
+        <a href="javascript:;" class="popup-btn lottery left"></a>
+        <a href="javascript:;" class="popup-btn go right"></a>
     </div>
-    <div class="popup win">
+     <div class="popup win" style="display: block1;">
+        <img id="lotteryimg" src="" alt="">
+        <span id="winmoney">70</span>
+    </div>
+   <!--  <div class="popup win">
         <p class="win-title">恭喜您获得<br><span><span id="winmoney">70</span>元电子券一张</span></p>
         <img id="lotteryimg" src="img/win1.jpeg" style="width: 3.5rem;" alt="">
         <p class="win-desc">
             长按识别或保存上方二维码<br>
             马上领取保存至微信卡包
         </p>
-    </div>
+    </div> -->
 </body>
 <script src="js/main.js"></script>
 </html>
