@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="format-detection" content="telephone=no">
     <meta name="viewport" content="width=375,user-scalable=0;">
-    <title>game</title>
+    <title>pierre cardin 70th 时光荣耀 绽放未来</title>
     <link rel="stylesheet" href="main.css">
-    <script src="https://cdn.bootcss.com/zepto/1.0rc1/zepto.min.js"></script>
     <script src="js/flexible.js"></script>
+    <script src="https://cdn.bootcss.com/zepto/1.0rc1/zepto.min.js"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
 </head>
 <body>
     <div class="game cf">
@@ -30,10 +31,14 @@
     </div>
 
     <div id="popup-mask"></div>
-    <div class="popup popup-error">
+    <!-- <div class="popup popup-error">
         <h3 class="title">好可惜，挑战失败，勇敢再试一次</h3>
         <a href="javascript:;" class="popup-btn again">再玩一次</a>
-        <!-- <a href="javascript:;" class="popup-btn lottery">马上抽奖</a> -->
+    </div> -->
+    <div class="popup popup-error">
+        <img src="img/fail-popup.jpg" alt="">
+        <a href="javascript:;" class="popup-btn lottery left"></a>
+        <a href="javascript:;" class="popup-btn again center"></a>
     </div>
     <!-- <div class="popup popup-succ">
         <h3 class="title">恭喜成功过关！</h3>
@@ -45,9 +50,16 @@
         <a href="javascript:;" class="popup-btn lottery left"></a>
         <a href="javascript:;" class="popup-btn go right"></a>
     </div>
-     <div class="popup win" style="display: block1;">
+    <div class="popup popup-succ-all">
+        <div class="done-title">
+            <p>恭喜</p>
+            <span>顺利完成所有拼图</span>
+        </div>
+        <a href="javascript:;" class="popup-btn lottery center"></a>
+    </div>
+     <div class="popup win">
         <img id="lotteryimg" src="" alt="">
-        <span id="winmoney">70</span>
+        <span id="winmoney"></span>
     </div>
    <!--  <div class="popup win">
         <p class="win-title">恭喜您获得<br><span><span id="winmoney">70</span>元电子券一张</span></p>
