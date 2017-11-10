@@ -238,7 +238,13 @@ table.gridtable td {
     width: 4.2rem;
     height: 4.2rem;
     animation:move 5s 0s;
+    -webkit-animation:move 5s 0s;
+    -moz-animation:move 5s 0s;
+    -o-animation:move 5s 0s;
     animation-fill-mode:forwards;
+    -webkit-animation-fill-mode:forwards;
+    -moz-animation-fill-mode:forwards;
+    -o-animation-fill-mode:forwards;
     z-index:2;
 }
 
@@ -247,16 +253,25 @@ table.gridtable td {
         right: 0;
         top:0;
         transform: scale(3);
+        -moz-transform: scale(3);
+        -webkit-transform: scale(3);
+        -o-transform: scale(3);
     }
     50%{
         right: 3.333333rem;
         top:5.733333rem;
         transform: scale(4);
+        -moz-transform: scale(4);
+        -webkit-transform: scale(4);
+        -o-transform: scale(4);
     }
     100%{
         right: 0rem;
         top:13.333333rem;
         transform: scale(5);
+        -moz-transform: scale(5);
+        -webkit-transform: scale(5);
+        -o-transform: scale(5);
     }
 }
 
