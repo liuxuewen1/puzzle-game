@@ -43,4 +43,17 @@ $(function(){
         })
     };
     wxShare();
+
+
+    
+    var oAudio = document.getElementById('audio1');
+    $(".audio-cls").on('click', function(){
+        $(this).toggleClass('hovertreerun');
+        if($(this).hasClass('hovertreerun')){
+            oAudio.play();
+        }else{
+            oAudio.pause();
+        }
+    })
+
 })

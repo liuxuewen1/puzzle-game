@@ -233,6 +233,5 @@ $(function(){
             $(".popup-succ-all").hide();
             // $("#popup-mask").show();
         }
-
-
+    
     })

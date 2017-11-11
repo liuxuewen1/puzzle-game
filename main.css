@@ -276,8 +276,64 @@ table.gridtable td {
 }
 
 /*game.html*/
+@keyframes hovertreecircle {
+ from {
+
+        transform:rotate(0deg);
+-ms-transform:rotate(0deg);     /* IE 9 */
+-moz-transform:rotate(0deg);    /* Firefox */
+-webkit-transform:rotate(0deg); /* Safari �� Chrome */
+-o-transform:rotate(0deg);  /* Opera */
+    }
+
+    to {
+
+        transform:rotate(360deg);
+-ms-transform:rotate(360deg);   /* IE 9 */
+-moz-transform:rotate(360deg);  /* Firefox */
+-webkit-transform:rotate(360deg); /* Safari �� Chrome */
+-o-transform:rotate(360deg);    /* Opera */
+    }
+
+}
+ @-webkit-keyframes hovertreecircle 
+{
+   from {
+
+        transform:rotate(0deg);
+-ms-transform:rotate(0deg);     /* IE 9 */
+-moz-transform:rotate(0deg);    /* Firefox */
+-webkit-transform:rotate(0deg); /* Safari �� Chrome */
+-o-transform:rotate(0deg);  /* Opera */
+    }
+
+    to {
+
+        transform:rotate(360deg);
+-ms-transform:rotate(360deg);   /* IE 9 */
+-moz-transform:rotate(360deg);  /* Firefox */
+-webkit-transform:rotate(360deg); /* Safari �� Chrome */
+-o-transform:rotate(360deg);    /* Opera */
+    }
+}
+.hovertreerun{
+    animation: hovertreecircle 2s linear infinite;
+     -webkit-animation:hovertreecircle 5s linear infinite; /* Safari and Chrome*/
+}
+
 .game {
     margin-top: 2rem;
+}
+.audio-cls{
+    z-index: 10;
+    position: absolute;
+    top: 0;
+    opacity: 0.8;
+    right: 0;
+    width: 0.68rem;
+    height: 0.68rem;
+    background-image: url(img/music.png);
+    background-size: cover;
 }
 .game .header{
     position: absolute;
