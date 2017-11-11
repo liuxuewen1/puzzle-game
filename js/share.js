@@ -45,8 +45,9 @@ $(function(){
     wxShare();
 
 
-    
+
     var oAudio = document.getElementById('audio1');
+    oAudio.play();
     $(".audio-cls").on('click', function(){
         $(this).toggleClass('hovertreerun');
         if($(this).hasClass('hovertreerun')){
