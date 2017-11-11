@@ -14,6 +14,7 @@ $(function(){
                 time: 5
             }
         };
+        var isAll = false;
         var t = 3;
         var timer = null;
         var level = 1;
@@ -141,6 +142,7 @@ $(function(){
         function showFailPopup(){
             if(level === 1){
                 $(".popup-error .lottery").hide();
+                $(".popup-error .again").removeClass('right').addClass('center');
             }else{
                 $(".popup-error .lottery").show();
                 $(".popup-error .again").removeClass('center').addClass('right');
@@ -151,19 +153,40 @@ $(function(){
         function showSuccPopup(){
             clearInterval(timer);
             if(level === 3){
-                $(".go").hide();
-                $(".popup-succ-all").show()
+                $(".popup-succ .go").hide();
+                $(".popup-succ-all").show();
+                isAll = true;
             }else{
+                isAll = false;
                 showPopup('popup-succ');
+                $(".popup-succ .popup-btn").show();
             }
         }
-        //继续挑战
-        $(".go").on('click', function(){
+        //popup-succ 继续挑战
+        $(".popup-succ .go").on('click', function(){
             level++;
             hidePopup('popup-succ');
         })
+        //win 继续挑战
+        $(".win .center").on('click', function(){
+            if($(this).hasClass('go')){
+                if(level === 3){
+                    level = isAll? 1 : 3;
+                }else{
+                    level += 1;
+                }
+            }else{
+                if(level === 3){
+                    level = isAll? 1 : 3;
+                }
+            }
+            objData[level].time = objData[level].otime;
+            hidePopup('win');
+            $(".popup-succ-all").hide();
+            isAll = false;
+        })
         //再玩一次
-        $(".again").on('click', function(){
+        $(".popup-error .again").on('click', function(){
             objData[level].time = objData[level].otime;
             hidePopup('popup-error');
         })
@@ -179,7 +202,10 @@ $(function(){
         $(".lottery").on('click', function(){
             if($(".popup-error").css('display') !== 'none'){
                 gameLottery(level-1);
+                $(".win .center").removeClass('go').addClass('again');
             }else{
+                $(".win .center").removeClass('again').addClass('go');
+                
                 gameLottery();
             }
         })
@@ -193,12 +219,18 @@ $(function(){
                 "2": 200,
                 "3": 500
             }
+            if(level === 3){
+                $('.win .center').removeClass('go').addClass('again');
+            }else{
+                $('.win .center').removeClass('again').addClass('go');
+            }
             $("#lotteryimg").attr('src', 'img/win'+optLevel+'.jpeg');
             $("#winmoney").html('恭喜您获得<br>'+lottery[optLevel]+'电子代金券一张');
             $(".win").show();
             $(".popup-succ").hide();
             $(".popup-error").hide();
-            $(".lottery").hide();
+            $(".popup-succ .lottery").hide();
+            $(".popup-succ-all").hide();
             // $("#popup-mask").show();
         }
 

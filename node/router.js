@@ -75,7 +75,6 @@ router.get('/jssdk', (req, res) => {
             jsApiList: _jsApiList // 必填，需要使用的JS接口列表，所有JS接口列表见附录2
         }
     };
-    console.log(_result);
     res.send(_result);
 })
 
